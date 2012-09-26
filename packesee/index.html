@@ -1,0 +1,38 @@
+<!DOCUTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Packet to Byte</title>
+</head>
+<body>
+  <header>
+    <h1>Packet to Byte</h1>
+    <p>convert packet to byte !</p>
+  </header>
+  <div>
+   <ul>
+     <li><input type="number" id="packet">&nbsp;packet</li>
+     <li><input type="text" id="b">&nbsp;Byte</li>
+     <li><input type="text" id="mb">&nbsp;MB</li>
+     <li><input type="text" id="gb">&nbsp;GB</li>
+   </ul>
+  </div>
+
+  <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    $('#packet').on('keyup change click', function() {
+      var packet = $('#packet').val();
+      var byte = packet * 128;
+      var kb = byte / 1024;
+      var mb = kb / 1024;
+      var gb = mb / 1024;
+
+      $('#b').val(byte);
+      $('#mb').val(mb);
+      $('#gb').val(gb);
+    });
+  });
+  </script>
+</body>
+</html>
